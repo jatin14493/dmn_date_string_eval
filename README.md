@@ -1,19 +1,28 @@
-# camunda BPM - Getting Started with camunda BPM and Spring Boot
+DMN Evaluation
 
-This Repository contains the example Spring Boot application for the guide at [camunda.org](http://camunda.org/get-started/spring-boot.html).
 
-Every step of the tutorial was tagged in this repository. You can jump to the final state of each step
-by the following command:
+1. In the main method play around with the variables to see which condition gets evaluated.
 
-```
-git checkout -f Step-X
-```
+HIT Policy : First (which takes in account the first matching row in case multiple rows of inputs get matched.)
 
-If you want to follow the tutorial along please clone this repository and checkout the `Start` tag.
+INPUTS
 
-```
-git clone https://github.com/camunda/camunda-get-started-spring-boot.git
-git checkout -f Start
-```
+There are 3 inputs taken in the example :
+  1. Name :  String type
+  2. Date : Input of type date (Note format of date should be like : yyyy-MM-ddT12:00:00, T is mandatory else the execution     fails.)
+  3. Email : String type (To play around with things like contains, startswith etc.)
 
-License: The source files in this repository are made available under the [Apache License Version 2.0](./LICENSE).
+OUTPUT
+
+1. Result variable which will hold the execution result. In this case, it will return a String.
+
+
+Please Note :
+
+FEEL doesn't support feature like contains, startsWith etc so we need to set the inputEntry expression language explicitly to JUEL in order for DMN Engine to evaluate it correctly. For other inputs and operations, FEEL Expressions work correctly without any extra effort.
+
+
+Steps to Play Around :
+
+1. In main method, there's a variable MAP wherein anyone can provide custom inputs and verify if the rules are working as desired. Also, DMN conditions can be updated to set new rules and condition. Post changes re-run the application to check the output.
+
