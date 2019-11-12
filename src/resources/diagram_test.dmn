@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1rg5a97" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.1">
+  <decision id="decisionTest" name="Decision 1">
+    <extensionElements>
+      <biodi:bounds x="157" y="81" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Name">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>name</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ptdeb6" label="Date">
+        <inputExpression id="LiteralExpression_18gg0o4" typeRef="date">
+          <text>date</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_123bhht" label="Email">
+        <inputExpression id="LiteralExpression_0k2e03f" typeRef="string">
+          <text>email</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Test Output" name="variableOutput" typeRef="string" />
+      <rule id="DecisionRule_16e8pbg">
+        <inputEntry id="UnaryTests_1s56puz">
+          <text>"Jatin", "Abhishek"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pff80d">
+          <text>&lt; date and time("2019-11-04T00:00:00")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hnvkn1" expressionLanguage="juel">
+          <text>email.startsWith("mahajan")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vbh15k">
+          <text>"Amigos"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0j8ks1v">
+        <inputEntry id="UnaryTests_07ppjum">
+          <text>"Jatin"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18vi7h7">
+          <text>&gt; date and time("2019-11-04T00:00:00")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yj1b4f" expressionLanguage="juel">
+          <text>email.contains("jat")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ib5suf">
+          <text>"Burritos"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mxsf4v">
+        <inputEntry id="UnaryTests_1abw6h2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0en346k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nrqna9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kubz7c">
+          <text>"Else Output"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
