@@ -19,7 +19,7 @@ OUTPUT
 
 Please Note :
 
-FEEL doesn't support feature like contains, startsWith etc so we need to set the inputEntry expression language explicitly to JUEL in order for DMN Engine to evaluate it correctly. For other inputs and operations, FEEL Expressions work correctly without any extra effort.
+FEEL doesn't support feature like contains, startsWith etc so we need to set the inputEntry expression language explicitly to JUEL for that particular cell (all others by default will be set to FEEL only)in order for DMN Engine to evaluate it correctly. For other inputs and operations, FEEL Expressions work correctly without any extra effort.
 
 
 Steps to Play Around :
